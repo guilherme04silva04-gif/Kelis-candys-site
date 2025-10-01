@@ -99,7 +99,7 @@
   <script src="script.js"></script>
 </body>
 </html>
-[01/10, 12:03] Guilherme S.: body {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #fff8f0;
@@ -202,7 +202,7 @@ blockquote {
     width: 100%;
   }
 }
-[01/10, 12:03] Guilherme S.: let index = 0;
+let index = 0;
 function slide(direction) {
   const carousel = document.getElementById('carousel');
   const total = carousel.children.length;
