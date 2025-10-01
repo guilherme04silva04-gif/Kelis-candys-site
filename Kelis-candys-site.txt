@@ -1,0 +1,211 @@
+[01/10, 12:02] Guilherme S.: <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelis Candy's</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#encomendas">Encomendas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#promocoes">Promoções</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="banner">
+    <img src="logo.jpg" alt="Logo Kelis Candy's" />
+    <h2>O melhor doce da cidade!</h2>
+  </section>
+
+  <section id="produtos" class="produtos">
+    <div class="produto"><img src="brigadeiro.jpg" alt="Brigadeiro" /><h3>Brigadeiros</h3></div>
+    <div class="produto"><img src="bolo-pote.jpg" alt="Bolo de Pote" /><h3>Bolos de Pote</h3></div>
+    <div class="produto"><img src="mousse.jpg" alt="Mousse" /><h3>Mousse</h3></div>
+    <div class="produto"><img src="pudim.jpg" alt="Pudim" /><h3>Pudim</h3></div>
+  </section>
+
+  <section id="encomendas" class="contato">
+    <h2>Faça sua encomenda</h2>
+    <form action="https://formsubmit.co/guilherme04silva04@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false" />
+      <label>Nome:</label><br />
+      <input type="text" name="nome" required /><br /><br />
+      <label>Telefone / WhatsApp:</label><br />
+      <input type="tel" name="telefone" required /><br /><br />
+      <label>Produto:</label><br />
+      <select name="produto" required>
+        <option value="Brigadeiro">Brigadeiro</option>
+        <option value="Bolo de Pote">Bolo de Pote</option>
+        <option value="Mousse">Mousse</option>
+        <option value="Pudim">Pudim</option>
+      </select><br /><br />
+      <label>Quantidade:</label><br />
+      <input type="number" name="quantidade" min="1" required /><br /><br />
+      <label>Data de entrega desejada:</label><br />
+      <input type="date" name="data" required /><br /><br />
+      <label>Observações:</label><br />
+      <textarea name="mensagem" rows="4"></textarea><br /><br />
+      <button type="submit">Enviar Pedido</button>
+    </form>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <h2>Sobre a Kelis Candy’s</h2>
+    <p>Somos apaixonados por doces! A Kelis Candy’s nasceu com o propósito de adoçar momentos especiais com brigadeiros, bolos de pote, mousses e pudins feitos com carinho e ingredientes de qualidade.</p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria de Doces</h2>
+    <div class="carousel-container">
+      <div id="carousel">
+        <img src="brigadeiro.jpg" alt="Brigadeiro" class="zoom" />
+        <img src="bolo-pote.jpg" alt="Bolo de Pote" class="zoom" />
+        <img src="mousse.jpg" alt="Mousse" class="zoom" />
+        <img src="pudim.jpg" alt="Pudim" class="zoom" />
+      </div>
+    </div>
+    <button onclick="slide(-1)">⬅️</button>
+    <button onclick="slide(1)">➡️</button>
+  </section>
+
+  <section id="depoimentos" class="depoimentos">
+    <h2>Depoimentos</h2>
+    <blockquote>“Os brigadeiros da Kelis Candy’s são os melhores que já provei! Entrega rápida e sabor incrível.”<br />— Ana Paula, São Paulo</blockquote>
+    <blockquote>“Comprei para o aniversário da minha filha e todos os convidados elogiaram. Super recomendo!”<br />— Rodrigo M., Santo André</blockquote>
+  </section>
+
+  <section id="promocoes" class="promocoes">
+    <h2>Promoções Especiais</h2>
+    <p>🎁 Kit Festa: 50 brigadeiros + 10 mousses por R$ 99,90</p>
+    <p>🎂 Bolo de pote em dobro: leve 2, pague 1 toda sexta-feira!</p>
+    <p>💌 Promoções válidas até 31/10. Encomende pelo WhatsApp!</p>
+    <a href="https://wa.me/5511918533186" target="_blank">Quero aproveitar!</a>
+  </section>
+
+  <section id="contato" class="contato">
+    <p>📞 Encomendas também pelo WhatsApp:</p>
+    <a href="https://wa.me/5511918533186" target="_blank">Falar com a Kelis Candy’s</a>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+[01/10, 12:03] Guilherme S.: body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff8f0;
+}
+header {
+  background-color: #ffb6c1;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.banner, .produtos, .contato, .sobre, .depoimentos, .promocoes {
+  padding: 40px 20px;
+  text-align: center;
+}
+.banner img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+.produto {
+  display: inline-block;
+  width: 250px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  padding: 15px;
+}
+.produto img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.produto h3 {
+  margin-top: 10px;
+  color: #d14;
+}
+.contato a, .promocoes a {
+  background-color: #d14;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.carousel-container {
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+#carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+#carousel img {
+  width: 300px;
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+.zoom {
+  transition: transform 0.3s ease;
+}
+.zoom:hover {
+  transform: scale(1.1);
+}
+blockquote {
+  max-width: 600px;
+  margin: 20px auto;
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .produto {
+    width: 90%;
+    margin: 10px auto;
+  }
+  #carousel img {
+    width: 90%;
+  }
+  form input, form select, form textarea {
+    font-size: 1em;
+    width: 100%;
+  }
+}
+[01/10, 12:03] Guilherme S.: let index = 0;
+function slide(direction) {
+  const carousel = document.getElementById('carousel');
+  const total = carousel.children.length;
+  index = Math.max(0, Math.min(index + direction, total - 1));
+  carousel.style.transform = `translateX(-${index * 320}px)`;
+}
